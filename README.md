@@ -14,20 +14,8 @@
 
 [Getting Started](#-quick-start) •
 [Features](#-features) •
-[Screenshots](#-screenshots) •
-[Documentation](#-documentation) •
+[Tech Stack](#%EF%B8%8F-tech-stack) •
 [Contributing](#-contributing)
-
-</div>
-
----
-
-<div align="center">
-
-<!-- Replace with actual GIF/screenshot -->
-![Dashboard Preview](https://via.placeholder.com/800x450/1a1a2e/eaeaea?text=Dashboard+Preview)
-
-*Clean, modern interface to manage all your Google files and emails*
 
 </div>
 
@@ -194,26 +182,6 @@ npm run dev
 4. Add HTTP referrer restrictions for production
 
 </details>
-
----
-
-## 📸 Screenshots
-
-<div align="center">
-
-### Sign In
-![Sign In](https://via.placeholder.com/700x400/667eea/ffffff?text=Sign+In+Screen)
-
-### Drive Management
-![Drive](https://via.placeholder.com/700x400/764ba2/ffffff?text=Drive+Management)
-
-### Gmail Overview
-![Gmail](https://via.placeholder.com/700x400/f093fb/ffffff?text=Gmail+Overview)
-
-### Bulk Operations
-![Bulk Ops](https://via.placeholder.com/700x400/4facfe/ffffff?text=Bulk+Operations)
-
-</div>
 
 ---
 

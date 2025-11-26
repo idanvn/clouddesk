@@ -1,312 +1,361 @@
-# Google Drive & Gmail Manager
+<div align="center">
 
-A comprehensive React application for managing Google Drive files and Gmail messages with advanced features like auto-organization, bulk operations, and label management.
+# 🚀 Google Drive & Gmail Manager
 
-## Features
+### Manage your Google Drive & Gmail like a pro
 
-### Google Drive Management
-- **Advanced File Search**: Search files using Google Drive query syntax
-- **Auto-Organization**: Automatically organize files into folders by type:
-  - Documents (Google Docs, PDFs, Word files)
-  - Spreadsheets (Google Sheets, Excel files)
-  - Images (JPEG, PNG, GIF)
-  - Videos (MP4, AVI)
-- **Bulk Delete Old Files**: Delete files older than a specified number of days
-- **File Sharing**: Share multiple files with users via email
-- **File Download**: Download files directly from the interface
-- **Multi-Select**: Checkbox selection for bulk operations
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![Made with React](https://img.shields.io/badge/Made%20with-React-61DAFB?logo=react)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-7.x-646CFF?logo=vite)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.x-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
 
-### Gmail Management
-- **Advanced Email Search**: Search emails using Gmail query syntax
-- **Label Management**:
-  - Create new labels
-  - Delete custom labels
-  - View all labels
-  - Apply labels to individual emails
-- **Spam Deletion**: Delete all spam emails at once
-- **Delete Old Emails**: Move emails older than specified days to trash
-- **Email List Display**: View emails with sender, subject, and date information
+**One powerful tool to organize, clean, and manage your Google workspace.**
 
-## Technologies Used
+[Getting Started](#-quick-start) •
+[Features](#-features) •
+[Screenshots](#-screenshots) •
+[Documentation](#-documentation) •
+[Contributing](#-contributing)
 
-- **React** - UI framework
-- **Vite** - Build tool and dev server
-- **Tailwind CSS** - Styling
-- **Lucide React** - Icons
-- **Google APIs**:
-  - Drive API v3
-  - Gmail API v1
+</div>
 
-## Prerequisites
+---
 
-Before you begin, you need to set up Google Cloud credentials:
+<div align="center">
+
+<!-- Replace with actual GIF/screenshot -->
+![Dashboard Preview](https://via.placeholder.com/800x450/1a1a2e/eaeaea?text=Dashboard+Preview)
+
+*Clean, modern interface to manage all your Google files and emails*
+
+</div>
+
+---
+
+## 😫 The Problem
+
+We've all been there:
+
+- **Cluttered Drive** — Thousands of files you can't find
+- **Overflowing Inbox** — 10,000+ unread emails haunting you
+- **Wasted Storage** — "Storage full" notifications on repeat
+- **Manual Cleanup** — Hours spent deleting files one by one
+- **No Overview** — No idea what's eating your 15GB
+
+## ✨ The Solution
+
+**Google Drive & Gmail Manager** gives you superpowers:
+
+- Bulk delete old files and emails in seconds
+- Visualize what's consuming your storage
+- Smart search across Drive and Gmail
+- Organize with one click
+- All from one beautiful dashboard
+
+---
+
+## 🎯 Features
+
+<table>
+<tr>
+<td width="50%">
+
+### 📁 Google Drive
+- **Smart Search** — Find any file instantly
+- **Bulk Operations** — Delete, share, organize multiple files
+- **Storage Analytics** — See what's eating your space
+- **Quick Preview** — View files without leaving the app
+- **Drag & Drop** — Easy file organization
+- **Star Management** — Quick access to important files
+
+</td>
+<td width="50%">
+
+### 📧 Gmail
+- **Inbox Overview** — See all emails at a glance
+- **Bulk Delete** — Clean old emails in seconds
+- **Spam Cleaner** — One-click spam removal
+- **Label Management** — Create and organize labels
+- **Archive Tools** — Declutter without deleting
+- **Unread Counter** — Know your inbox status
+
+</td>
+</tr>
+</table>
+
+### More Highlights
+
+| Feature | Description |
+|---------|-------------|
+| 🛡️ **Privacy First** | Runs 100% locally — your data never leaves your machine |
+| ⚡ **Lightning Fast** | Built with Vite for instant loading |
+| 🎨 **Modern UI** | Beautiful glassmorphism design with smooth animations |
+| 📱 **Responsive** | Works on desktop, tablet, and mobile |
+| 🔒 **Secure** | OAuth 2.0 authentication, no passwords stored |
+| 🌙 **Dark Mode** | Easy on the eyes (coming soon) |
+
+---
+
+## 🚀 Quick Start
+
+Get up and running in **3 simple steps**:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/idanvn/clouddesk.git
+cd clouddesk
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the app
+npm run dev
+```
+
+Then open **http://localhost:5173** in your browser.
+
+> ⚠️ **First time?** You'll need to set up Google API credentials. See [Configuration](#%EF%B8%8F-configuration) below.
+
+---
+
+## 🐳 Docker Deployment
+
+Prefer Docker? We've got you covered:
+
+```bash
+# Build and run with Docker Compose
+docker compose up -d
+
+# App will be available at http://localhost:5343
+```
+
+Or build manually:
+
+```bash
+docker build -t google-manager .
+docker run -p 5343:3000 google-manager
+```
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
+---
+
+## ⚙️ Configuration
+
+### 1. Create Google Cloud Project
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select an existing one
-3. Enable the following APIs:
-   - Google Drive API
-   - Gmail API
-4. Create OAuth 2.0 credentials:
-   - Go to "Credentials" in the sidebar
-   - Click "Create Credentials" > "OAuth client ID"
-   - Choose "Web application"
-   - Add authorized JavaScript origins:
-     - `http://localhost:5173` (for development)
-     - Your production domain (if deploying)
-   - Add authorized redirect URIs:
-     - `http://localhost:5173` (for development)
-     - Your production domain (if deploying)
-   - Copy the Client ID
-5. Create an API Key:
-   - Go to "Credentials"
-   - Click "Create Credentials" > "API Key"
-   - Copy the API Key
+2. Create a new project
+3. Enable **Google Drive API** and **Gmail API**
+4. Create OAuth 2.0 credentials (Web application)
+5. Add authorized JavaScript origins:
+   - `http://localhost:5173` (development)
+   - Your production URL
 
-## Installation
+### 2. Set Environment Variables
 
-1. Clone or download this project
+Create a `.env` file in the root directory:
 
-2. Navigate to the project directory:
-```bash
-cd google-drive-gmail-manager
+```env
+VITE_GOOGLE_CLIENT_ID=your-client-id.apps.googleusercontent.com
+VITE_GOOGLE_API_KEY=your-api-key
 ```
 
-3. Install dependencies:
-```bash
-npm install
-```
+### 3. Run the App
 
-4. Configure your Google API credentials:
-   - Copy the environment template: `cp .env.example .env`
-   - Edit `.env` and add your credentials:
-
-```bash
-VITE_GOOGLE_CLIENT_ID=your-actual-client-id.apps.googleusercontent.com
-VITE_GOOGLE_API_KEY=your-actual-api-key
-```
-
-   **⚠️ IMPORTANT**: Never commit the `.env` file to version control!
-
-5. Start the development server:
 ```bash
 npm run dev
 ```
 
-6. Open your browser and navigate to `http://localhost:5173`
+<details>
+<summary>📖 Detailed Setup Guide (Click to expand)</summary>
 
-## Usage
+#### Creating OAuth Credentials
 
-### Initial Setup
+1. In Google Cloud Console, navigate to **APIs & Services** > **Credentials**
+2. Click **Create Credentials** > **OAuth client ID**
+3. Select **Web application**
+4. Add authorized JavaScript origins:
+   ```
+   http://localhost:5173
+   http://localhost:5343
+   ```
+5. Add authorized redirect URIs (same as above)
+6. Click **Create** and copy your Client ID
 
-1. Click "Sign in with Google" on the landing page
-2. Grant permissions for:
-   - Google Drive access
-   - Gmail modify access
-3. You'll be redirected to the main application
+#### Creating API Key
 
-### Google Drive Tab
+1. In **Credentials**, click **Create Credentials** > **API Key**
+2. Copy the API Key
+3. Click **Restrict Key** and limit to:
+   - Google Drive API
+   - Gmail API
+4. Add HTTP referrer restrictions for production
 
-1. **Search Files**:
-   - Enter a search query in the search box
-   - Use Google Drive query syntax (e.g., `name contains 'report'`)
-   - Click "Search" or press Enter
+</details>
 
-2. **Auto-Organize Files**:
-   - Click "Organize Files" button
-   - Confirm the action
-   - Files will be organized into folders by type
+---
 
-3. **Delete Old Files**:
-   - Click "Delete Old Files"
-   - Specify the number of days (default: 365)
-   - Confirm deletion
+## 📸 Screenshots
 
-4. **Share Files**:
-   - Select files using checkboxes
-   - Click "Share Files"
-   - Enter the recipient's email address
-   - Confirm sharing
+<div align="center">
 
-5. **Download Files**:
-   - Click the download icon next to any file in the list
+### Sign In
+![Sign In](https://via.placeholder.com/700x400/667eea/ffffff?text=Sign+In+Screen)
 
-### Gmail Tab
+### Drive Management
+![Drive](https://via.placeholder.com/700x400/764ba2/ffffff?text=Drive+Management)
 
-1. **Search Emails**:
-   - Enter a Gmail query (e.g., `from:someone@example.com`)
-   - Click "Search" or press Enter
+### Gmail Overview
+![Gmail](https://via.placeholder.com/700x400/f093fb/ffffff?text=Gmail+Overview)
 
-2. **Create Label**:
-   - Click "Create Label"
-   - Enter a label name
-   - Click "Create"
+### Bulk Operations
+![Bulk Ops](https://via.placeholder.com/700x400/4facfe/ffffff?text=Bulk+Operations)
 
-3. **Manage Labels**:
-   - Click "Manage Labels"
-   - View all custom labels
-   - Delete labels by clicking the X icon
+</div>
 
-4. **Delete Spam**:
-   - Click "Delete Spam"
-   - Confirm to permanently delete all spam emails
+---
 
-5. **Delete Old Emails**:
-   - Click "Delete Old Emails"
-   - Specify the number of days (default: 365)
-   - Confirm to move old emails to trash
+## 🛠️ Tech Stack
 
-6. **Apply Labels to Emails**:
-   - Search for emails first
-   - Use the dropdown in each row to apply a label
+<div align="center">
 
-## File Structure
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-FF0055?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
 
-```
-google-drive-gmail-manager/
-├── public/
-├── src/
-│   ├── components/
-│   │   ├── Alert.jsx           # Success/error alert component
-│   │   ├── ConfirmDialog.jsx   # Confirmation dialog component
-│   │   ├── Gmail.jsx            # Gmail management interface
-│   │   ├── GoogleDrive.jsx      # Drive management interface
-│   │   ├── Header.jsx           # App header with sign out
-│   │   ├── Loading.jsx          # Loading spinner component
-│   │   └── SignIn.jsx           # Sign-in landing page
-│   ├── utils/
-│   │   ├── driveApi.js          # Google Drive API functions
-│   │   ├── gmailApi.js          # Gmail API functions
-│   │   └── googleApi.js         # Google OAuth initialization
-│   ├── App.jsx                  # Main app component
-│   ├── config.js                # API credentials configuration
-│   ├── index.css                # Tailwind CSS imports
-│   └── main.jsx                 # App entry point
-├── index.html
-├── package.json
-├── tailwind.config.js
-├── postcss.config.js
-└── vite.config.js
-```
+</div>
 
-## API Scopes
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| **React** | 19 | UI framework with concurrent features |
+| **Vite** | 7 | Next-generation build tool |
+| **Tailwind CSS** | 4 | Utility-first styling |
+| **Framer Motion** | 12 | Smooth animations |
+| **Lucide Icons** | Latest | Beautiful open-source icons |
+| **Google APIs** | v3/v1 | Drive & Gmail integration |
 
-The application requests the following OAuth scopes:
+---
 
-- `https://www.googleapis.com/auth/drive` - Full access to Google Drive
-- `https://www.googleapis.com/auth/gmail.modify` - Read, compose, send, and permanently delete emails
+## 🔒 Security
 
-## Security
+This application takes security seriously:
 
-This application implements comprehensive security measures. See [SECURITY.md](SECURITY.md) for full details.
+- ✅ **OAuth 2.0** with CSRF protection
+- ✅ **Input validation** on all user inputs
+- ✅ **Rate limiting** to prevent API abuse
+- ✅ **Content Security Policy** headers
+- ✅ **No data storage** — everything stays with Google
+- ✅ **Secure logging** — no sensitive data in production logs
 
-### Key Security Features
+See [SECURITY.md](SECURITY.md) for detailed security documentation.
 
-✅ **Environment Variables**: API keys stored in `.env` files, not in source code
-✅ **OAuth 2.0 with CSRF Protection**: Secure authentication with state parameter verification
-✅ **Input Validation**: Email addresses, search queries, and all user inputs are validated
-✅ **Rate Limiting**: Prevents API abuse with configurable rate limits
-✅ **Content Security Policy**: Restricts script execution to trusted sources
-✅ **Sanitization**: All outputs are sanitized to prevent XSS attacks
-✅ **Secure Logging**: No sensitive data logged in production
-✅ **Error Handling**: User-friendly errors without exposing system details
+---
 
-### Security Best Practices
+## 👥 Who Is This For?
 
-**Before Production Deployment:**
+<table>
+<tr>
+<td align="center">👨‍💼<br><b>Workspace Admins</b><br>Tired of manual cleanup</td>
+<td align="center">📧<br><b>Email Overloaders</b><br>Drowning in 10k+ emails</td>
+<td align="center">👥<br><b>Teams</b><br>Needing better organization</td>
+<td align="center">💾<br><b>Storage Savers</b><br>Wanting to reclaim space</td>
+</tr>
+</table>
 
-1. **Restrict API Keys in Google Cloud Console**:
-   - Limit to Drive API and Gmail API only
-   - Add HTTP referrer restrictions
-   - Whitelist only your production domains
+---
 
-2. **Configure OAuth Client ID**:
-   - Add only authorized domains
-   - Whitelist specific redirect URIs
-   - Remove test users for public apps
+## 🗺️ Roadmap
 
-3. **Environment Security**:
-   - Never commit `.env` files to version control
-   - Use different API keys for development and production
-   - Rotate API keys periodically
+We're just getting started! Here's what's coming:
 
-4. **Testing**:
-   - Complete the [SECURITY_TESTING.md](SECURITY_TESTING.md) checklist
-   - Test email validation with invalid inputs
-   - Verify rate limiting triggers correctly
-   - Test error scenarios and confirmations
+- [ ] 📅 **Google Calendar Integration** — Manage events
+- [ ] ⏰ **Scheduled Auto-Cleanup** — Set it and forget it
+- [ ] 📊 **Analytics Dashboard** — Deep storage insights
+- [ ] 🧩 **Chrome Extension** — Manage from anywhere
+- [ ] 📱 **Mobile App** — iOS & Android versions
+- [ ] 🤖 **AI Suggestions** — Smart cleanup recommendations
 
-### Security Limitations
+Have an idea? [Open a feature request](https://github.com/idanvn/clouddesk/issues/new)!
 
-⚠️ **Client-Side API Keys**: While API keys are in environment variables, they're still embedded in the JavaScript bundle and visible to anyone who inspects the code. This is a limitation of client-side applications.
+---
 
-**Mitigation**:
-- Use API key restrictions in Google Cloud Console
-- For production apps with sensitive data, implement a backend API proxy
+## 🤝 Contributing
 
-### Reporting Security Issues
-
-Found a security vulnerability? Please see [SECURITY.md](SECURITY.md) for reporting instructions. **Do not** open public issues for security concerns.
-
-## Troubleshooting
-
-### "Google API not loaded" error
-- Check your internet connection
-- Ensure the Google API script is loading correctly in `index.html`
-
-### "Failed to initialize Google API" error
-- Verify your API Key in `src/config.js`
-- Ensure Drive API and Gmail API are enabled in Google Cloud Console
-
-### OAuth consent screen errors
-- Make sure authorized JavaScript origins include your development URL
-- Check that the OAuth consent screen is configured properly
-- For development, you may need to add test users in Google Cloud Console
-
-### "Permission denied" errors
-- Ensure you've granted all requested permissions during sign-in
-- Try signing out and signing in again
-- Check that the required APIs are enabled in your Google Cloud project
-
-## Building for Production
-
-To create a production build:
+Contributions are what make the open-source community amazing! Any contributions you make are **greatly appreciated**.
 
 ```bash
-npm run build
+# 1. Fork the repo
+
+# 2. Create your feature branch
+git checkout -b feature/amazing-feature
+
+# 3. Commit your changes
+git commit -m 'Add amazing feature'
+
+# 4. Push to the branch
+git push origin feature/amazing-feature
+
+# 5. Open a Pull Request
 ```
 
-The built files will be in the `dist/` directory. You can deploy these to any static hosting service.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
-## Browser Support
+---
 
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
+## 🐛 Troubleshooting
 
-## License
+<details>
+<summary><b>"Google API not loaded" error</b></summary>
 
-This project is open source and available for educational and personal use.
+- Check your internet connection
+- Ensure Google API script is not blocked by ad blockers
+- Try a different browser
+</details>
 
-## Support
+<details>
+<summary><b>"Failed to initialize Google API" error</b></summary>
 
-For issues related to:
-- Google APIs: Check [Google API documentation](https://developers.google.com/apis-explorer)
-- React/Vite: Check respective documentation
-- This application: Review the code or create an issue
+- Verify your API Key in `.env`
+- Ensure Drive API and Gmail API are enabled
+- Check that credentials are not restricted incorrectly
+</details>
 
-## Development
+<details>
+<summary><b>OAuth consent screen errors</b></summary>
 
-To contribute or modify:
+- Add `http://localhost:5173` to authorized origins
+- For development, add yourself as a test user
+- Make sure the OAuth consent screen is configured
+</details>
 
-1. Make your changes
-2. Test thoroughly with your Google account
-3. Ensure all features work as expected
-4. Build and deploy
+---
 
-## Acknowledgments
+## 💬 Community & Support
 
-- Built with React and Vite
-- Styled with Tailwind CSS
-- Icons from Lucide React
-- Google APIs for Drive and Gmail integration
+- ⭐ **Star this repo** if you find it useful
+- 🐛 **[Report bugs](https://github.com/idanvn/clouddesk/issues)** — Help us improve
+- 💡 **[Request features](https://github.com/idanvn/clouddesk/discussions)** — Share your ideas
+- 📖 **[Read the docs](https://github.com/idanvn/clouddesk/wiki)** — Learn more
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+### ⭐ Star us on GitHub — it motivates us a lot!
+
+---
+
+**Built with ❤️ using React, Vite, and Tailwind CSS**
+
+[⬆ Back to Top](#-google-drive--gmail-manager)
+
+</div>

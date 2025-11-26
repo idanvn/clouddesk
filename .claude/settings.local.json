@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(npm install)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss init -p)",
+      "Bash(./node_modules/.bin/tailwindcss init:*)",
+      "Bash(npm run build:*)",
+      "Bash(tree:*)",
+      "Bash(npm audit:*)",
+      "Bash(cat:*)",
+      "Bash(mkdir:*)",
+      "Bash(docker compose:*)",
+      "Bash(docker compose build:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
